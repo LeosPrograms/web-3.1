@@ -1,0 +1,15 @@
+[package]
+name = "web31"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "web31"
+
+[dependencies]
+hdk = { workspace = true }
+
+serde = { workspace = true }
+
+web31_integrity = { workspace = true } 

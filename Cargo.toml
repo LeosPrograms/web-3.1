@@ -6,16 +6,27 @@ opt-level = "z"
 
 [workspace]
 members = ["dnas/*/zomes/coordinator/*", "dnas/*/zomes/integrity/*"]
-
 resolver = "2"
 
 [workspace.dependencies]
-hdi = "=0.3.1"
-hdk = "=0.2.1"
-serde = "1"
+hdi = "=0.3.4"
+hdk = "=0.2.4"
+serde = "=1.0.166"
 
-[workspace.dependencies.hc_facets]
-path = "dnas/hc_facets/zomes/coordinator/hc_facets"
+[workspace.dependencies.file_storage]
+path = "dnas/web31/zomes/coordinator/file_storage"
 
-[workspace.dependencies.hc_facets_integrity]
-path = "dnas/hc_facets/zomes/integrity/hc_facets"
+[workspace.dependencies.file_storage_integrity]
+path = "dnas/web31/zomes/integrity/file_storage"
+
+[workspace.dependencies.web31]
+path = "dnas/web31/zomes/coordinator/web31"
+
+[workspace.dependencies.web31_integrity]
+path = "dnas/web31/zomes/integrity/web31"
+
+[workspace.dependencies.webpage]
+path = "dnas/web31/zomes/coordinator/webpage"
+
+[workspace.dependencies.webpage_integrity]
+path = "dnas/web31/zomes/integrity/webpage"

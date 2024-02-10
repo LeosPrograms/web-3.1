@@ -10,7 +10,7 @@ test('create FacetOption', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -33,7 +33,7 @@ test('create and read FacetOption', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -57,7 +57,7 @@ test('create and read FacetOption', async () => {
 
     // Bob gets the created FacetOption
     const createReadOutput: Record = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_option",
       payload: record.signed_action.hashed.hash,
     });
@@ -69,7 +69,7 @@ test('create and update FacetOption', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -97,7 +97,7 @@ test('create and update FacetOption', async () => {
     };
 
     let updatedRecord: Record = await alice.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "update_facet_option",
       payload: updateInput,
     });
@@ -108,7 +108,7 @@ test('create and update FacetOption', async () => {
         
     // Bob gets the updated FacetOption
     const readUpdatedOutput0: Record = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_option",
       payload: updatedRecord.signed_action.hashed.hash,
     });
@@ -123,7 +123,7 @@ test('create and update FacetOption', async () => {
     };
 
     updatedRecord = await alice.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "update_facet_option",
       payload: updateInput,
     });
@@ -134,7 +134,7 @@ test('create and update FacetOption', async () => {
         
     // Bob gets the updated FacetOption
     const readUpdatedOutput1: Record = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_option",
       payload: updatedRecord.signed_action.hashed.hash,
     });
@@ -146,7 +146,7 @@ test('create and delete FacetOption', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -165,7 +165,7 @@ test('create and delete FacetOption', async () => {
         
     // Alice deletes the FacetOption
     const deleteActionHash = await alice.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "delete_facet_option",
       payload: record.signed_action.hashed.hash,
     });
@@ -176,7 +176,7 @@ test('create and delete FacetOption', async () => {
         
     // Bob tries to get the deleted FacetOption
     const readDeletedOutput = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_option",
       payload: record.signed_action.hashed.hash,
     });

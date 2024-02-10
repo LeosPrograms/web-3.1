@@ -10,7 +10,7 @@ test('create FacetValue', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -33,7 +33,7 @@ test('create FacetValue', async () => {
 //   await runScenario(async scenario => {
 //     // Construct proper paths for your app.
 //     // This assumes app bundle created by the `hc app pack` command.
-//     const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+//     const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
 //     // Set up the app to be installed 
 //     const appSource = { appBundleSource: { path: testAppPath } };
@@ -57,7 +57,7 @@ test('create FacetValue', async () => {
 
 //     // Bob gets the created FacetValue
 //     const createReadOutput: Record = await bob.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "retrieve_facet_value",
 //       payload: record.signed_action.hashed.hash,
 //     });
@@ -69,7 +69,7 @@ test('create and read FacetValue', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -93,7 +93,7 @@ test('create and read FacetValue', async () => {
 
     // Bob gets the created FacetValue
     const createReadOutput: Record = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_value",
       payload: record.signed_action.hashed.hash,
     });
@@ -105,7 +105,7 @@ test('create and update FacetValue', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -133,7 +133,7 @@ test('create and update FacetValue', async () => {
     };
 
     let updatedRecord: Record = await alice.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "update_facet_value",
       payload: updateInput,
     });
@@ -144,7 +144,7 @@ test('create and update FacetValue', async () => {
         
     // Bob gets the updated FacetValue
     const readUpdatedOutput0: Record = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_value",
       payload: updatedRecord.signed_action.hashed.hash,
     });
@@ -159,7 +159,7 @@ test('create and update FacetValue', async () => {
     };
 
     updatedRecord = await alice.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "update_facet_value",
       payload: updateInput,
     });
@@ -170,7 +170,7 @@ test('create and update FacetValue', async () => {
         
     // Bob gets the updated FacetValue
     const readUpdatedOutput1: Record = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_value",
       payload: updatedRecord.signed_action.hashed.hash,
     });
@@ -182,7 +182,7 @@ test('create and delete FacetValue', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -201,7 +201,7 @@ test('create and delete FacetValue', async () => {
         
     // Alice deletes the FacetValue
     const deleteActionHash = await alice.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "delete_facet_value",
       payload: record.signed_action.hashed.hash,
     });
@@ -212,7 +212,7 @@ test('create and delete FacetValue', async () => {
         
     // Bob tries to get the deleted FacetValue
     const readDeletedOutput = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_facet_value",
       payload: record.signed_action.hashed.hash,
     });

@@ -15,7 +15,7 @@ export async function sampleFacetGroup(cell: CallableCell, partialFacetGroup = {
 
 export async function createFacetGroup(cell: CallableCell, facetGroup = undefined): Promise<Record> {
     return cell.callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "create_facet_group",
       payload: facetGroup || await sampleFacetGroup(cell),
     });
@@ -36,7 +36,7 @@ export async function sampleFacetOption(cell: CallableCell, partialFacetOption =
 
 export async function createFacetOption(cell: CallableCell, facetOption = undefined): Promise<Record> {
     return cell.callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "create_facet_option",
       payload: facetOption || await sampleFacetOption(cell),
     });
@@ -57,7 +57,7 @@ export async function sampleFacetValue(cell: CallableCell, partialFacetValue = {
 
 export async function createFacetValue(cell: CallableCell, facetValue = undefined): Promise<Record> {
     return cell.callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "create_facet_value",
       payload: facetValue || await sampleFacetValue(cell),
     });
@@ -65,7 +65,7 @@ export async function createFacetValue(cell: CallableCell, facetValue = undefine
 
 export async function useFacetValue(cell: CallableCell, facetValue = undefined): Promise<Record> {
     return cell.callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "use_facet_value",
       payload: facetValue || await sampleFacetValue(cell),
     });

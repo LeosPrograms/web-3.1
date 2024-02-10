@@ -11,7 +11,7 @@
 //   await runScenario(async scenario => {
 //     // Construct proper paths for your app.
 //     // This assumes app bundle created by the `hc app pack` command.
-//     const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+//     const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
 //     // Set up the app to be installed 
 //     const appSource = { appBundleSource: { path: testAppPath } };
@@ -31,7 +31,7 @@
 
 //     // Bob gets the links, should be empty
 //     let linksOutput: Record[] = await bob.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "get_facet_values_for_facet_option",
 //       payload: baseAddress
 //     });
@@ -39,7 +39,7 @@
 
 //     // Alice creates a link from FacetOption to FacetValue
 //     await alice.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "add_facet_value_for_facet_option",
 //       payload: {
 //         base_facet_option_hash: baseAddress,
@@ -51,7 +51,7 @@
     
 //     // Bob gets the links again
 //     linksOutput = await bob.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "get_facet_values_for_facet_option",
 //       payload: baseAddress
 //     });
@@ -61,7 +61,7 @@
 
 //     // Bob gets the links in the inverse direction
 //     linksOutput = await bob.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "get_facet_options_for_facet_value",
 //       payload: targetAddress
 //     });
@@ -69,7 +69,7 @@
 //     assert.deepEqual(baseRecord, linksOutput[0]);
 
 //     await alice.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "remove_facet_value_for_facet_option",
 //       payload: {
 //         base_facet_option_hash: baseAddress,
@@ -81,7 +81,7 @@
 
 //     // Bob gets the links again
 //     linksOutput = await bob.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "get_facet_values_for_facet_option",
 //       payload: baseAddress
 //     });
@@ -89,7 +89,7 @@
 
 //     // Bob gets the links in the inverse direction
 //     linksOutput = await bob.cells[0].callZome({
-//       zome_name: "hc_facets",
+//       zome_name: "web31",
 //       fn_name: "get_facet_options_for_facet_value",
 //       payload: targetAddress
 //     });

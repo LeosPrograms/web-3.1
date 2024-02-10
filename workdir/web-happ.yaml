@@ -1,7 +1,7 @@
 ---
 manifest_version: "1"
-name: hc-facets
+name: web31
 ui:
   bundled: "../ui/dist.zip"
 happ_manifest:
-  bundled: "./hc-facets.happ"
+  bundled: "./web31.happ"

@@ -10,7 +10,7 @@ test('create a FacetGroup and get all groups', async () => {
   await runScenario(async scenario => {
     // Construct proper paths for your app.
     // This assumes app bundle created by the `hc app pack` command.
-    const testAppPath = process.cwd() + '/../workdir/hc-facets.happ';
+    const testAppPath = process.cwd() + '/../workdir/web31.happ';
 
     // Set up the app to be installed 
     const appSource = { appBundleSource: { path: testAppPath } };
@@ -25,7 +25,7 @@ test('create a FacetGroup and get all groups', async () => {
 
     // Bob gets all groups
     let collectionOutput: Record[] = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_all_groups",
       payload: null
     });
@@ -39,7 +39,7 @@ test('create a FacetGroup and get all groups', async () => {
     
     // Bob gets all groups again
     collectionOutput = await bob.cells[0].callZome({
-      zome_name: "hc_facets",
+      zome_name: "web31",
       fn_name: "get_all_groups",
       payload: null
     });
