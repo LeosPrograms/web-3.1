@@ -1,4 +1,4 @@
-# Holochain Facets
+# Web 3.1
 Faceted classifications as a plugin DNA for any data source with unique identifiers.
 
 The FacetGroup is used for applications that has more than one set of facets for different purposes.  If you only have one set of facets, you don't need that.  If you use it, you will need to "hard-code" the name, to use the right set of facets in the right places in your application.  The Facets and FacetValues can then be user defined.
